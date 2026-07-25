@@ -1106,13 +1106,34 @@ a {
   
   /* Footer */
   .footer-grid {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .footer {
-    padding: 3rem 1rem 1.5rem;
+    padding: 2rem 1rem 1rem;
   }
   .footer-logo h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  .footer-logo p {
+    font-size: 0.8rem;
+  }
+  .footer-links h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+  .footer-links li {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-subscribe h4 {
+    font-size: 0.95rem;
+  }
+  .footer-subscribe p {
+    font-size: 0.85rem;
+  }
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
   }
   
   /* Booking Page */

@@ -88,12 +88,18 @@ export default function PortfolioPage({ services }: { services: any[] }) {
         {isMobileMenuOpen && (
           <motion.div 
             className="mobile-menu-overlay"
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            <div className="mobile-menu-content">
+            <motion.div 
+              className="mobile-menu-content"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
               <button className="mobile-menu-close" onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={28} />
               </button>
@@ -119,7 +125,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
                   <a href="#"><InstagramIcon /></a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
