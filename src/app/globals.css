@@ -1110,6 +1110,7 @@ a {
   
   /* Footer */
   .footer-grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .footer {
