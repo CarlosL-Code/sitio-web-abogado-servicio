@@ -867,90 +867,123 @@ a {
 }
 
 /* ==================================
-   Mobile Responsiveness (max-width: 768px)
+   Mobile Responsiveness (Premium)
 ================================== */
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navigation - Keep it in one row, no wrapping */
   .top-nav {
-    padding: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    padding: 1rem 1.5rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
   .top-nav.scrolled {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
   }
   .nav-links {
-    display: none; /* Hide on very small screens to keep it clean, rely on CTA */
+    display: none; /* Hide links, keep logo and CTA */
   }
   .nav-brand h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0;
+  }
+  .nav-contact .btn-solid-blue {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
   }
   
   /* Hero Section */
-  .hero-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .hero-section {
+    height: 100vh;
+    min-height: 500px;
   }
   .hero-content {
-    padding: 1rem;
+    padding: 6rem 1.5rem 0;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.15;
   }
   .hero-content p {
     font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
   }
   
   /* Overlapping Cards */
   .overlap-cards-wrapper {
-    margin-top: -40px;
-    margin-bottom: 2rem;
+    margin-top: -60px;
+    margin-bottom: 3rem;
     padding: 0 1rem;
   }
   .overlap-grid {
+    grid-template-columns: 1fr;
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
   .overlap-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
   }
   .overlap-card:last-child {
     border-bottom: none;
   }
+  .overlap-icon svg {
+    width: 40px;
+    height: 40px;
+  }
   
   /* About & Timeline */
   .about-section {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
+  }
+  .section-header {
+    margin-bottom: 2.5rem;
   }
   .section-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .timeline-dots {
     gap: 0.5rem;
+    margin-bottom: 2.5rem;
   }
   .line-connect {
-    width: 30px;
+    width: 20px;
+  }
+  .timeline-item span {
+    font-size: 0.75rem;
+  }
+  .about-grid {
+    gap: 2.5rem;
   }
   .about-images {
-    height: 350px;
+    height: 300px;
   }
   .about-img-main {
     width: 90%;
-    height: 250px;
+    height: 220px;
   }
   .about-img-sub {
-    width: 70%;
-    height: 200px;
-    border-width: 5px;
+    width: 65%;
+    height: 180px;
+    border-width: 6px;
+  }
+  .about-text h3 {
+    font-size: 1.5rem;
   }
   
   /* News */
   .news-section {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
   }
   .news-header-flex {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 2rem;
   }
   .news-header-title {
     font-size: 1.8rem;
@@ -958,40 +991,65 @@ a {
   .news-header-desc {
     text-align: left;
     max-width: 100%;
+    font-size: 0.95rem;
   }
   .news-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .news-image {
+    height: 180px;
+  }
+  .news-content {
+    padding: 1.5rem;
   }
   
   /* Dark Services */
   .dark-services {
-    padding: 4rem 1rem;
+    padding: 4rem 1.5rem;
   }
   .dark-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .services-box-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .service-box {
+    padding: 1.5rem;
   }
   
   /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   .footer {
-    padding: 3rem 1rem 1rem;
+    padding: 4rem 1.5rem 1.5rem;
   }
   
   /* Booking Page */
   .booking-page-container {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+  .booking-card {
+    border-radius: 16px;
   }
   .booking-header {
     padding: 2rem 1.5rem;
   }
   .booking-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .booking-header p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
   .booking-body {
     padding: 1.5rem;
+  }
+  .step-container h3 {
+    font-size: 1.3rem;
   }
   .datetime-selection,
   .form-grid-2 {
@@ -999,7 +1057,7 @@ a {
     gap: 1rem;
   }
   .step-actions {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 1rem;
   }
   .step-actions button {
