@@ -81,7 +81,7 @@ export default function BookingForm({ services }: { services: any[] }) {
       <div className="booking-card">
         <div className="booking-header">
           <h2>Agendar Cita</h2>
-          <p>Sigue los pasos para reservar tu evaluación legal con la abogada Miriam Contreras.</p>
+          <p>Sigue los pasos para reservar tu evaluación legal con la abogada Myriam Contreras.</p>
           
           <div className="booking-steps">
             <div className={`step-indicator ${step >= 1 ? 'active' : ''}`}>1. Servicio</div>

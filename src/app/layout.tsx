@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Miriam Contreras | Abogada",
+  title: "Myriam Contreras | Abogada",
   description: "Diplomada en derecho de familia, infancia y adolescencia. Licenciada en ciencias jurídicas con más de 3 años de experiencia solucionando problemas en el área digital.",
 };
 

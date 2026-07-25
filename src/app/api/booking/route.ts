@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       // 1. Email to the Client
       await resend.emails.send({
-        from: 'Miriam Contreras <citas@tudominio.com>', // Replace with verified domain later
+        from: 'Myriam Contreras <citas@tudominio.com>', // Replace with verified domain later
         to: [data.email],
         subject: 'Confirmación de tu solicitud de evaluación legal',
         html: `
@@ -39,15 +39,15 @@ export async function POST(req: Request) {
             <p><strong>Hora:</strong> ${data.time}</p>
             <p>En breve nos pondremos en contacto contigo para confirmar la reunión y enviarte los detalles de conexión o ubicación.</p>
             <hr />
-            <p style="font-size: 12px; color: #666;">Miriam Contreras - Abogada Especialista en Derecho de Familia</p>
+            <p style="font-size: 12px; color: #666;">Myriam Contreras - Abogada Especialista en Derecho de Familia</p>
           </div>
         `
       });
 
-      // 2. Notification to Miriam
+      // 2. Notification to Myriam
       await resend.emails.send({
         from: 'Sistema de Agendamiento <sistema@tudominio.com>', // Replace
-        to: ['miriam@tudominio.com'], // Miriam's real email goes here
+        to: ['myriam@tudominio.com'], // Myriam's real email goes here
         subject: `Nueva Cita Agendada: ${data.name}`,
         html: `
           <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">

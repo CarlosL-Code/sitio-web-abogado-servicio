@@ -106,7 +106,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
               
               <div className="mobile-menu-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3rem', color: 'var(--color-primary)' }}>
                 <Scale size={24} />
-                <h1 style={{ fontSize: '1.2rem', fontWeight: 800 }}>MIRIAM CONTRERAS</h1>
+                <h1 style={{ fontSize: '1.2rem', fontWeight: 800 }}>MYRIAM CONTRERAS</h1>
               </div>
               
               <div className="mobile-menu-links">
@@ -134,7 +134,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-brand">
           <Scale size={24} />
-          <h1>MIRIAM CONTRERAS</h1>
+          <h1>MYRIAM CONTRERAS</h1>
         </div>
         <div className="nav-links desktop-only">
           <a href="#inicio" onClick={(e) => handleScrollTo(e, 'inicio')}>Inicio</a>
@@ -241,7 +241,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
-              <Image src="/images/lawyer.jpg" alt="Miriam Contreras" width={500} height={600} className="about-img-main" />
+              <Image src="/images/lawyer.jpg" alt="Myriam Contreras" width={500} height={600} className="about-img-main" />
               <Image src="/images/services.jpg" alt="Derecho de familia" width={400} height={300} className="about-img-sub" />
             </motion.div>
             
@@ -253,7 +253,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
               transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
             >
               <p style={{ color: 'var(--color-accent)', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Abogada Directora</p>
-              <h3>Miriam Contreras</h3>
+              <h3>Myriam Contreras</h3>
               <p>
                 Licenciada en ciencias jurídicas y diplomada en derecho de familia, infancia y adolescencia. Mi práctica legal se distingue por un enfoque altamente estructurado y corporativo, diseñado para resolver conflictos familiares con la máxima eficiencia y rigor.
               </p>
@@ -357,7 +357,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
             <div className="footer-logo">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
                 <Scale size={32} color="var(--color-accent)" />
-                <h2 style={{ margin: 0 }}>MIRIAM<br/>CONTRERAS</h2>
+                <h2 style={{ margin: 0 }}>MYRIAM<br/>CONTRERAS</h2>
               </div>
               <p>Proveyendo servicios legales corporativos y de familia con los más altos estándares de eficiencia y transparencia en Chile.</p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
@@ -393,7 +393,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Miriam Contreras. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Myriam Contreras. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
