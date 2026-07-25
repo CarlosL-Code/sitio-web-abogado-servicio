@@ -55,7 +55,7 @@ export default function BookingForm({ services }: { services: any[] }) {
     setLoading(false);
   };
 
-  const fadeUp = {
+  const fadeUp: any = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 20 } },
     exit: { opacity: 0, x: -50, transition: { duration: 0.2 } }
