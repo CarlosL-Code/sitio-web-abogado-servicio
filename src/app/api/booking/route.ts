@@ -15,7 +15,6 @@ export async function POST(req: Request) {
         clientName: data.name,
         clientEmail: data.email,
         clientPhone: data.phone || null,
-        notes: data.notes || null,
         status: "PENDING",
         serviceId: data.serviceId,
       }
