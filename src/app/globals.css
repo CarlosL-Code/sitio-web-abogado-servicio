@@ -612,6 +612,66 @@ a {
   color: white;
 }
 
+/* Mobile Menu Styles (Default Hidden) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  cursor: pointer;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-menu-content {
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: var(--bg-white);
+  padding: 2rem 1.5rem;
+  position: relative;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-grow: 1;
+}
+
+.mobile-menu-links a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
 @media (max-width: 1024px) {
   .overlap-grid {
     grid-template-columns: 1fr;
@@ -880,41 +940,46 @@ a {
   .top-nav.scrolled {
     padding: 1rem 1.5rem;
   }
-  .nav-links {
-    display: none; /* Hide links, keep logo and CTA */
+  .nav-links.desktop-only, 
+  .nav-contact.desktop-only {
+    display: none !important;
   }
-  .nav-brand h1 {
-    font-size: 1.1rem;
-    letter-spacing: 0;
-  }
-  .nav-contact .btn-solid-blue {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  /* Hero Section */
+  /* Web-App Sizing Adjustments (Smaller Fonts) */
+  body {
+    font-size: 14px;
+  }
+  
   .hero-section {
-    height: 100vh;
-    min-height: 500px;
+    height: 90vh;
+    min-height: 400px;
   }
   .hero-content {
-    padding: 6rem 1.5rem 0;
+    padding: 5rem 1rem 0;
   }
   .hero-title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    line-height: 1.15;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
   }
   .hero-content p {
-    font-size: 0.95rem !important;
-    margin-bottom: 2rem !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem !important;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* Overlapping Cards */
   .overlap-cards-wrapper {
-    margin-top: -60px;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
+    margin-top: -30px;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
   }
   .overlap-grid {
     grid-template-columns: 1fr;
@@ -922,27 +987,36 @@ a {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
   .overlap-card {
-    padding: 2.5rem 1.5rem;
+    padding: 1.5rem 1rem;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
+  }
+  .overlap-title {
+    font-size: 1rem;
+  }
+  .overlap-desc {
+    font-size: 0.85rem;
   }
   .overlap-card:last-child {
     border-bottom: none;
   }
   .overlap-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+  }
+  .overlap-icon {
+    margin-bottom: 1rem;
   }
   
   /* About & Timeline */
   .about-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
   }
   .section-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .timeline-dots {
     gap: 0.5rem;
@@ -970,86 +1044,111 @@ a {
     border-width: 6px;
   }
   .about-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   /* News */
   .news-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
   }
   .news-header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   .news-header-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .news-header-desc {
-    text-align: left;
-    max-width: 100%;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
   .news-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   .news-image {
-    height: 180px;
+    height: 150px;
   }
   .news-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
+  }
+  .news-title {
+    font-size: 1.05rem;
+  }
+  .news-desc {
+    font-size: 0.85rem;
   }
   
   /* Dark Services */
   .dark-services {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
   }
   .dark-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+  .dark-desc {
+    font-size: 0.85rem;
   }
   .services-box-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.8rem;
   }
   .service-box {
-    padding: 1.5rem;
+    padding: 1.2rem;
+  }
+  .service-box h4 {
+    font-size: 0.95rem;
+  }
+  .service-box p {
+    font-size: 0.85rem;
   }
   
   /* Footer */
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .footer {
-    padding: 4rem 1.5rem 1.5rem;
+    padding: 3rem 1rem 1.5rem;
+  }
+  .footer-logo h2 {
+    font-size: 1.2rem;
   }
   
   /* Booking Page */
   .booking-page-container {
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
   }
   .booking-card {
-    border-radius: 16px;
+    border-radius: 12px;
   }
   .booking-header {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
   .booking-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   .booking-header p {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
   }
   .booking-body {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
   .step-container h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+  .service-option {
+    padding: 1rem;
+  }
+  .service-opt-header h4 {
+    font-size: 0.95rem;
+  }
+  .service-option p {
+    font-size: 0.8rem;
+  }
+  .price-badge {
+    font-size: 0.75rem;
   }
   .datetime-selection,
   .form-grid-2 {

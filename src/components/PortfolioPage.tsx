@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, ArrowRight, X, Phone, MapPin, Scale, Briefcase, FileText, CheckCircle, Shield } from "lucide-react";
+import { Mail, ArrowRight, X, Phone, MapPin, Scale, Briefcase, FileText, CheckCircle, Shield, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -23,6 +23,7 @@ const REAL_NEWS = [
 export default function PortfolioPage({ services }: { services: any[] }) {
   const [scrolled, setScrolled] = useState(false);
   const [selectedNews, setSelectedNews] = useState<any | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +51,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
         top: element.getBoundingClientRect().top + window.scrollY - 80,
         behavior: "smooth"
       });
+      setIsMobileMenuOpen(false); // Close mobile menu if open
     }
   };
 
@@ -81,21 +83,65 @@ export default function PortfolioPage({ services }: { services: any[] }) {
         )}
       </AnimatePresence>
 
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            className="mobile-menu-overlay"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+          >
+            <div className="mobile-menu-content">
+              <button className="mobile-menu-close" onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={28} />
+              </button>
+              
+              <div className="mobile-menu-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3rem', color: 'var(--color-primary)' }}>
+                <Scale size={24} />
+                <h1 style={{ fontSize: '1.2rem', fontWeight: 800 }}>MIRIAM CONTRERAS</h1>
+              </div>
+              
+              <div className="mobile-menu-links">
+                <a href="#inicio" onClick={(e) => handleScrollTo(e, 'inicio')}>Inicio</a>
+                <a href="#nosotros" onClick={(e) => handleScrollTo(e, 'nosotros')}>Nosotros</a>
+                <a href="#servicios" onClick={(e) => handleScrollTo(e, 'servicios')}>Servicios</a>
+                <a href="#noticias" onClick={(e) => handleScrollTo(e, 'noticias')}>Publicaciones</a>
+              </div>
+              
+              <div className="mobile-menu-footer">
+                <Link href="/agendar" className="btn-solid-blue" style={{ width: '100%', textAlign: 'center', display: 'block', padding: '1rem', fontSize: '1rem' }}>
+                  Agendar Cita
+                </Link>
+                <div style={{ display: 'flex', gap: '1.5rem', marginTop: '2rem', justifyContent: 'center', color: 'var(--text-muted)' }}>
+                  <a href="#"><LinkedinIcon /></a>
+                  <a href="#"><InstagramIcon /></a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Navigation */}
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-brand">
-          <Scale size={28} />
+          <Scale size={24} />
           <h1>MIRIAM CONTRERAS</h1>
         </div>
-        <div className="nav-links">
+        <div className="nav-links desktop-only">
           <a href="#inicio" onClick={(e) => handleScrollTo(e, 'inicio')}>Inicio</a>
           <a href="#nosotros" onClick={(e) => handleScrollTo(e, 'nosotros')}>Nosotros</a>
           <a href="#servicios" onClick={(e) => handleScrollTo(e, 'servicios')}>Servicios</a>
           <a href="#noticias" onClick={(e) => handleScrollTo(e, 'noticias')}>Publicaciones</a>
         </div>
-        <div className="nav-contact">
+        <div className="nav-contact desktop-only">
           <Link href="/agendar" className="btn-solid-blue">Agendar Cita</Link>
         </div>
+        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(true)}>
+          <Menu size={28} />
+        </button>
       </nav>
 
       {/* Hero Section */}
