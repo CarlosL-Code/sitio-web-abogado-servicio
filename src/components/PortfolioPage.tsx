@@ -32,12 +32,12 @@ export default function PortfolioPage({ services }: { services: any[] }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const fadeUp = {
+  const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
   };
 
-  const stagger = {
+  const stagger: any = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
