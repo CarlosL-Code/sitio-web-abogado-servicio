@@ -1134,6 +1134,15 @@ a {
   }
   .footer-subscribe p {
     font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-subscribe .btn-solid-blue {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
   }
   .footer-bottom {
     padding-top: 1.5rem;
