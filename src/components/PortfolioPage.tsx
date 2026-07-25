@@ -32,14 +32,14 @@ export default function PortfolioPage({ services }: { services: any[] }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const fadeUp: any = {
+  const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
+    visible: { opacity: 1, y: 0 },
   };
 
-  const stagger: any = {
+  const stagger = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+    visible: { opacity: 1 },
   };
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -106,17 +106,18 @@ export default function PortfolioPage({ services }: { services: any[] }) {
           initial="hidden"
           animate="visible"
           variants={stagger}
+          transition={{ staggerChildren: 0.15 }}
         >
-          <motion.h4 variants={fadeUp} style={{ color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontWeight: 600 }}>
+          <motion.h4 variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} style={{ color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontWeight: 600 }}>
             Especialista en Derecho de Familia
           </motion.h4>
-          <motion.h1 variants={fadeUp} className="hero-title">
+          <motion.h1 variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="hero-title">
             DEFENSA LEGAL<br/>CON INTEGRIDAD
           </motion.h1>
-          <motion.p variants={fadeUp} style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: 'rgba(255,255,255,0.8)' }}>
+          <motion.p variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: 'rgba(255,255,255,0.8)' }}>
             Estrategias jurídicas a medida para proteger lo que más importa. Transparencia, empatía y resultados en tribunales chilenos.
           </motion.p>
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }}>
             <Link href="/agendar" className="btn-solid-blue">Evaluación de Caso</Link>
           </motion.div>
         </motion.div>
@@ -130,18 +131,19 @@ export default function PortfolioPage({ services }: { services: any[] }) {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={stagger}
+          transition={{ staggerChildren: 0.15 }}
         >
-          <motion.div variants={fadeUp} className="overlap-card">
+          <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="overlap-card">
             <div className="overlap-icon"><Briefcase /></div>
             <h3 className="overlap-title">Asesoría Inicial</h3>
             <p className="overlap-desc">Evaluación completa de antecedentes y diseño de estrategia legal.</p>
           </motion.div>
-          <motion.div variants={fadeUp} className="overlap-card highlight">
+          <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="overlap-card highlight">
             <div className="overlap-icon"><Scale /></div>
             <h3 className="overlap-title">Representación Judicial</h3>
             <p className="overlap-desc">Defensa integral en tribunales de familia y causas complejas.</p>
           </motion.div>
-          <motion.div variants={fadeUp} className="overlap-card">
+          <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="overlap-card">
             <div className="overlap-icon"><Shield /></div>
             <h3 className="overlap-title">Mediación Familiar</h3>
             <p className="overlap-desc">Asistencia y negociación en procesos de mediación obligatoria.</p>
@@ -158,6 +160,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
           >
             <h2 className="section-title">¿Por Qué Elegir Nuestro Estudio?</h2>
             <div className="timeline-dots">
@@ -219,8 +222,9 @@ export default function PortfolioPage({ services }: { services: any[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
+            transition={{ staggerChildren: 0.15 }}
           >
-            <motion.div variants={fadeUp} className="news-header-flex">
+            <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="news-header-flex">
               <h2 className="news-header-title">Abogada Diferente.<br/>Resultados Innovadores.</h2>
               <p className="news-header-desc">Análisis legal, jurisprudencia y actualidad comentada de forma sencilla y directa.</p>
             </motion.div>
@@ -230,6 +234,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
                 <motion.div 
                   key={news.id} 
                   variants={fadeUp} 
+                  transition={{ type: "spring", stiffness: 100, damping: 20 }}
                   className="news-card"
                   onClick={() => setSelectedNews(news)}
                 >
@@ -266,9 +271,10 @@ export default function PortfolioPage({ services }: { services: any[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
+            transition={{ staggerChildren: 0.15 }}
           >
             {services.map((service, idx) => (
-              <motion.div key={service.id} variants={fadeUp} className="service-box">
+              <motion.div key={service.id} variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="service-box">
                 <div className="service-box-header">
                   <div className="service-box-icon">
                     {idx === 0 ? <FileText size={28} /> : idx === 1 ? <Scale size={28} /> : <CheckCircle size={28} />}
@@ -280,7 +286,7 @@ export default function PortfolioPage({ services }: { services: any[] }) {
               </motion.div>
             ))}
             {/* Aditional Box for layout symmetry */}
-            <motion.div variants={fadeUp} className="service-box">
+            <motion.div variants={fadeUp} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="service-box">
               <div className="service-box-header">
                 <div className="service-box-icon"><Briefcase size={28} /></div>
                 <h4>Asuntos Corporativos</h4>
