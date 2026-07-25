@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} ${playfair.variable}`}>
-        {children}
+        <div style={{ overflowX: 'hidden', width: '100%', position: 'relative', minHeight: '100vh' }}>
+          {children}
+        </div>
       </body>
     </html>
   );
